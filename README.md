@@ -50,6 +50,30 @@ Se ocupará una variante del optimizador Adam que incorpora una estrategia de We
   
 * Pertinencia: AdamW resulta especialmente adecuado para este proyecto porque combina rapidez de convergencia con una estrategia efectiva de regularización. Dado que el modelo ResNet18 será ajustado mediante Transfer Learning, AdamW permite optimizar los parámetros de manera eficiente mientras controla el sobreajuste, favoreciendo un mejor desempeño sobre imágenes no vistas durante el entrenamiento.
 
+**Justificación Metricas**  
+En este proyecto se utilizaron las métricas precision, recall, F1-score y support porque permiten evaluar con mayor detalle el desempeño del modelo ResNet18 al clasificar imágenes en las categorías piedra, papel y tijera. Estas métricas son más informativas que observar únicamente la exactitud general, ya que permiten analizar el comportamiento del modelo en cada clase por separado.  
+
+* Recall: El recall indica qué proporción de las imágenes reales de una clase fueron reconocidas correctamente por el modelo. Por ejemplo, permite conocer cuántas de todas las imágenes reales de “piedra” fueron identificadas correctamente como piedra. Esta métrica es importante porque muestra si el modelo está dejando pasar ejemplos de alguna categoría.  
+
+* Precisión: La precision indica qué proporción de las imágenes que el modelo predijo como una clase realmente pertenecían a ella. Por ejemplo, si el modelo clasifica varias imágenes como “tijera”, esta métrica permite saber cuántas de esas predicciones eran efectivamente tijeras. Se utiliza en este proyecto porque permite detectar si el modelo está confundiendo una clase con las otras.  
+
+* F1-Score: El F1-score combina precision y recall en una sola medida. Se utiliza para obtener una evaluación equilibrada del rendimiento del modelo en cada clase. Es especialmente útil porque un modelo podría tener una precision alta, pero un recall bajo, o viceversa. El F1-score permite identificar si el modelo mantiene un buen equilibrio entre evitar predicciones incorrectas y reconocer correctamente la mayor cantidad posible de imágenes de cada categoría.  
+
+* Support: El support representa la cantidad real de imágenes pertenecientes a cada clase dentro del conjunto de evaluación. Esta métrica no mide directamente el rendimiento del modelo, pero permite interpretar correctamente las demás métricas.    
+
+**Resultados**  
+Los resultados obtenidos muestran que el modelo ResNet18, entrenado con Crossentropy y optimizado mediante AdamW, logró aprender correctamente las características principales de los tres gestos del dataset. A partir de las imágenes y gráficos generados, se puede notar.  
+
+<img width="593" height="398" alt="Cantidad de papel, piedra y tijeras" src="https://github.com/user-attachments/assets/5b876159-e443-4ab2-95cc-3344c248d615" />   
+
+Antes del entrenamiento se analizó la cantidad de imágenes por clase. La distribución mostró que las tres categorías (paper, rock y scissors) poseen una cantidad de ejemplos muy similar, con aproximadamente 330 a 350 imágenes por clase. Esto indica que el dataset se encuentra balanceado, disminuyendo el riesgo de que el modelo favorezca una categoría por sobre las demás durante el entrenamiento.  
+
+<img width="874" height="294" alt="Piedra" src="https://github.com/user-attachments/assets/4114a51b-feab-49c3-aecc-f7f6fc2feffd" />
+<img width="874" height="284" alt="Papel" src="https://github.com/user-attachments/assets/f8b6bb5b-9516-4b56-8f29-e764d8b1d76d" /> 
+<img width="874" height="290" alt="Tijeras" src="https://github.com/user-attachments/assets/2bbb1af6-b3c3-4b5c-95e9-d5f753637cfd" />  
+
+Como se puede notar, hay tres imagenes para cada una realizadas de forma aleatoria. El modelo fue capaz de poder definir la posicion de la mano si era piedra, papel o tijera, Esto es bastante importante ya que luego de poder definirlo, comienza el trabajo del modelo y metricas ocupadas para empezar a ver si lo define de forma correcta o incorrecta. 
+
 
 
 
