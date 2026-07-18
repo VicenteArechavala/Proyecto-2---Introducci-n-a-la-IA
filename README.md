@@ -62,6 +62,20 @@ En este proyecto se utilizaron las métricas precision, recall, F1-score y suppo
 * Support: El support representa la cantidad real de imágenes pertenecientes a cada clase dentro del conjunto de evaluación. Esta métrica no mide directamente el rendimiento del modelo, pero permite interpretar correctamente las demás métricas.    
 
 **Resultados**  
+Los resultados obtenidos muestran que el modelo ResNet18, entrenado con Crossentropy y optimizado mediante AdamW, logró aprender correctamente las características principales de los tres gestos del dataset. A partir de las imágenes y gráficos generados, se puede notar.  
+
+<img width="593" height="398" alt="Cantidad de papel, piedra y tijeras" src="https://github.com/user-attachments/assets/5b876159-e443-4ab2-95cc-3344c248d615" />   
+
+Antes del entrenamiento se analizó la cantidad de imágenes por clase. La distribución mostró que las tres categorías (paper, rock y scissors) poseen una cantidad de ejemplos muy similar, con aproximadamente 330 a 350 imágenes por clase. Esto indica que el dataset se encuentra balanceado, disminuyendo el riesgo de que el modelo favorezca una categoría por sobre las demás durante el entrenamiento.  
+
+<img width="874" height="294" alt="Piedra" src="https://github.com/user-attachments/assets/4114a51b-feab-49c3-aecc-f7f6fc2feffd" />
+<img width="874" height="284" alt="Papel" src="https://github.com/user-attachments/assets/f8b6bb5b-9516-4b56-8f29-e764d8b1d76d" /> 
+<img width="874" height="290" alt="Tijeras" src="https://github.com/user-attachments/assets/2bbb1af6-b3c3-4b5c-95e9-d5f753637cfd" />  
+
+Como se puede notar, hay tres imagenes para cada una realizadas de forma aleatoria. El modelo fue capaz de poder definir la posicion de la mano si era piedra, papel o tijera, Esto es bastante importante ya que luego de poder definirlo, comienza el trabajo del modelo y metricas ocupadas para empezar a ver si lo define de forma correcta o incorrecta. 
+
+
+
 
 
 
