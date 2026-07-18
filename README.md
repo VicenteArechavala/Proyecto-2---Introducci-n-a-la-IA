@@ -38,6 +38,8 @@ El objetivo es clasificar imágenes correspondientes a los gestos de piedra, pap
 
 ### Primeras Impresiones (Carga del dataset en adelante)
 
+### _Imágenes por clase se encuentran en el código_
+
 Se observa una cantidad importante de imágenes en la carpeta "val" y "test". A pesar de que la cantidad de imágenes en la carpeta "train" es mayor, normalmente debería seguir una distribución de sobre el 70% de las imágenes, cosa que no se cumple en este caso, ello pudiendo generar problemas para el modelo preentrenado para predecir correctamente las formas de las palmas de las manos. Aun así, se ha decidido no cambiar la distribución original prevista por el dataset, pues de esta manera se podrá evaluar de manera íntegra los resultados obtenidos, de forma que se pueda evaluar si llega a existir esta problemática o no con las configuraciones actuales del dataset.
 
 <img width="593" height="398" alt="Cantidad de papel, piedra y tijeras" src="https://github.com/user-attachments/assets/5b876159-e443-4ab2-95cc-3344c248d615" /> 
