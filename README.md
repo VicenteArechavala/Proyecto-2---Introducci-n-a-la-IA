@@ -1,4 +1,4 @@
-<img width="1289" height="490" alt="cce578f9-5233-4107-9a8e-e9de669c76ad" src="https://github.com/user-attachments/assets/94755c5b-e495-4916-9426-2d1baff43b51" />﻿# Proyecto-2---Introduccion-a-la-IA
+
 # Integrantes: Vicente Arechavala, Johan Riveros
 
 **Problemática**  
@@ -89,12 +89,14 @@ _Resultados de las iteraciones de EPOCH se encuentran en el código_
 Durante los Epoch, se observa que la pérdida de entrenamiento fue constante (pasó de 1.1495 a 0.3455), al igual que la pérdida de validación (1.0645 a 0.6179). Al mismo tiempo el accuracy de entrenamiento aumentó de 0.372 a 0.896, de la misma forma ocurre con el accuracy de validación, que aumentó de 0.430 a 0.749.
 Estos resultados determinan que el modelo "aprendió" patrones que le resultan útiles para la clasificación de las imágenes, y dicho aprendizaje se estaba trasladando al conjunto de validación. No se activó el early stopping en ninguna de las iteraciones, porque el modelo seguía mejorando.
 
-_Gráficas se encuentran en el código_
+<img width="1289" height="490" alt="cce578f9-5233-4107-9a8e-e9de669c76ad" src="https://github.com/user-attachments/assets/94755c5b-e495-4916-9426-2d1baff43b51" />﻿# Proyecto-2---Introduccion-a-la-IA
+
 Tal como se observó anteriormente, las pérdidas de entrenamiento y validación, así como las mejoras en el accuracy de los mismos tienen cierta consistencia. Dadas las leves mejoras en el crecimiento del accuracy para la validación desde el Epoch 10 en adelante (mayormente observable con los valores obtenidos en el ejercicio anterior) vemos que es posible que el modelo esté experimentando de overfitting. Sin embargo, las iteraciones realizadas aún conservan una diferencia entre entrenamiento y validación (diferencia entre 0.896 y 0.749), por lo que se puede argumentar que es un overfitting leve o controlado. Es menester que en caso de realizar mayor cantidad de iteraciones se observe dicha diferencia, porque es posible que en más de 20 iteraciones si se presente un caso de overfitting mayor al que se muestra actualmente.
 
 En vista lo anterior, se considera que el modelo es apto para el siguiente paso de testeo.
 
 _Reporte de clasificación se encuentra en el código_
+
 Se observa un accuracy del 0.5926 para el test, y si bien podría considerarse un valor relativamente bajo, pues el accuracy obtenido en la validación fue de 0.749, esto puede ocurrir dada la posibilidad de que las imágenes de la carpeta "test" contengan carácterísticas ligeramente distintas de las otras carpetas. A pesar de lo dicho, el valor obtenido en al accuracy del test determina que el modelo aprendió patrones relevantes que le permiten identificar con cierta claridad las opciones posibles.
 
 La clase con mayor desempeño es sin duda la de las tijeras, pues si bien tiene una presición de 0.609, cuenta con un recall de 0.807, y un f1-score de 0.694, por lo que el modelo identifica correctamente la mayoría de las imágenes con tijeras.
@@ -103,6 +105,7 @@ Los valores obtenidos en papel son bastante malos, pues con una presición de 0.
 
 
 _Matriz de confusión se encuentra en el código_
+
 La matriz de confusión obtenida muestra lo que se argumentó previamente. 
 
 La clase mayormente reconocida fue la de las tijeras, y fue pocas veces confundida con piedra, aunque si 24 veces confundida con papel.
@@ -113,6 +116,7 @@ Por último, en la clase papel se acertó en 95 de todos los casos, en donde el 
 
 
 ***Visualización de aciertos***
+
 <img width="973" height="349" alt="Papel C o I" src="https://github.com/user-attachments/assets/2a6506ba-54e7-4351-a547-061db0c612a9" />
 <img width="964" height="321" alt="Papel C O I 2" src="https://github.com/user-attachments/assets/08e0ab4d-ce1c-43ab-95e4-416cd16dc950" />
 <img width="970" height="327" alt="Papel C O I 3" src="https://github.com/user-attachments/assets/c13ece21-7299-4532-a060-b112fd00d420" />
