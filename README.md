@@ -36,7 +36,7 @@ El objetivo es clasificar imágenes correspondientes a los gestos de piedra, pap
   
 * Pertinencia: La elección de ResNet18 es pertinente porque el problema consiste en reconocer patrones visuales bien definidos dentro de imágenes y clasificarlos en una de tres categorías. El modelo ofrece una combinación adecuada entre precisión, velocidad de entrenamiento y consumo de recursos computacionales, lo que lo convierte en una alternativa apropiada.
 
-**Primeras Impresiones (Carga del dataset en adelante)**
+### Primeras Impresiones (Carga del dataset en adelante)
 
 Se observa una cantidad importante de imágenes en la carpeta "val" y "test". A pesar de que la cantidad de imágenes en la carpeta "train" es mayor, normalmente debería seguir una distribución de sobre el 70% de las imágenes, cosa que no se cumple en este caso, ello pudiendo generar problemas para el modelo preentrenado para predecir correctamente las formas de las palmas de las manos. Aun así, se ha decidido no cambiar la distribución original prevista por el dataset, pues de esta manera se podrá evaluar de manera íntegra los resultados obtenidos, de forma que se pueda evaluar si llega a existir esta problemática o no con las configuraciones actuales del dataset.
 
@@ -118,7 +118,7 @@ La clase piedra, tal como se indicó previamente cuenta con un recall de 0.441, 
 Por último, en la clase papel se acertó en 95 de todos los casos, en donde el principal error fue que el sistema atribuyó 60 de los casos como tijeras. Este error puede haber ocurrido dada una posición de manos que tuviese patrones mas atribuibles a las características que el sistema determina como tijeras. 
 
 
-***Visualización de aciertos***
+### Visualización de aciertos
 
 <img width="973" height="349" alt="Papel C o I" src="https://github.com/user-attachments/assets/2a6506ba-54e7-4351-a547-061db0c612a9" />
 <img width="964" height="321" alt="Papel C O I 2" src="https://github.com/user-attachments/assets/08e0ab4d-ce1c-43ab-95e4-416cd16dc950" />
