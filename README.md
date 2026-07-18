@@ -36,15 +36,18 @@ El objetivo es clasificar imágenes correspondientes a los gestos de piedra, pap
   
 * Pertinencia: La elección de ResNet18 es pertinente porque el problema consiste en reconocer patrones visuales bien definidos dentro de imágenes y clasificarlos en una de tres categorías. El modelo ofrece una combinación adecuada entre precisión, velocidad de entrenamiento y consumo de recursos computacionales, lo que lo convierte en una alternativa apropiada.
 
-### Primeras Impresiones (Carga del dataset en adelante)
+### Primeras Impresiones
 
-### _Imágenes por clase se encuentran en el código_
+### _Cantidad de imágenes por clase se encuentran en el código_
 
 Se observa una cantidad importante de imágenes en la carpeta "val" y "test". A pesar de que la cantidad de imágenes en la carpeta "train" es mayor, normalmente debería seguir una distribución de sobre el 70% de las imágenes, cosa que no se cumple en este caso, ello pudiendo generar problemas para el modelo preentrenado para predecir correctamente las formas de las palmas de las manos. Aun así, se ha decidido no cambiar la distribución original prevista por el dataset, pues de esta manera se podrá evaluar de manera íntegra los resultados obtenidos, de forma que se pueda evaluar si llega a existir esta problemática o no con las configuraciones actuales del dataset.
 
+### Cantidad de imágenes por clase gráfica
 <img width="593" height="398" alt="Cantidad de papel, piedra y tijeras" src="https://github.com/user-attachments/assets/5b876159-e443-4ab2-95cc-3344c248d615" /> 
 
 Antes del entrenamiento se analizó la cantidad de imágenes por clase. Se observa que existe una distribución ligeramente mayor para las imágenes que contienen "papel" respecto de las otras opciones, que tienen una distribución exactamente igual. Esto, sin embargo, no necesariamente representa una problemática, pues representa un desbalance bajo, por lo que no se aplicarán técnicas de reducción de dicho desbalance. 
+
+### Imágenes aleatorias del dataset
 
 <img width="874" height="294" alt="Piedra" src="https://github.com/user-attachments/assets/4114a51b-feab-49c3-aecc-f7f6fc2feffd" />
 <img width="874" height="284" alt="Papel" src="https://github.com/user-attachments/assets/f8b6bb5b-9516-4b56-8f29-e764d8b1d76d" /> 
