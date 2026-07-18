@@ -72,7 +72,29 @@ Antes del entrenamiento se analizó la cantidad de imágenes por clase. La distr
 <img width="874" height="284" alt="Papel" src="https://github.com/user-attachments/assets/f8b6bb5b-9516-4b56-8f29-e764d8b1d76d" /> 
 <img width="874" height="290" alt="Tijeras" src="https://github.com/user-attachments/assets/2bbb1af6-b3c3-4b5c-95e9-d5f753637cfd" />  
 
-Como se puede notar, hay tres imagenes para cada una realizadas de forma aleatoria. El modelo fue capaz de poder definir la posicion de la mano si era piedra, papel o tijera, Esto es bastante importante ya que luego de poder definirlo, comienza el trabajo del modelo y metricas ocupadas para empezar a ver si lo define de forma correcta o incorrecta. 
+Como se puede notar, las figuras del dataset no cuentan con una estructura específica, mas allá de las tres opciones permitidas, los diseños mostrados en cámara no siguen un patrón. El modelo fue capaz de poder definir la posicion de la mano si era piedra, papel o tijera. Esto es bastante importante ya que luego de poder definirlo, comienza el trabajo del modelo y métricas ocupadas para empezar a ver si lo define de forma correcta o incorrecta.
+
+<img width="973" height="349" alt="Papel C o I" src="https://github.com/user-attachments/assets/2a6506ba-54e7-4351-a547-061db0c612a9" />
+<img width="964" height="321" alt="Papel C O I 2" src="https://github.com/user-attachments/assets/08e0ab4d-ce1c-43ab-95e4-416cd16dc950" />
+<img width="970" height="327" alt="Papel C O I 3" src="https://github.com/user-attachments/assets/c13ece21-7299-4532-a060-b112fd00d420" />
+
+Las predicciones realizadas sobre el conjunto de prueba muestran que el modelo fue capaz de identificar correctamente la mayoría de los gestos. En las imágenes clasificadas correctamente se observa que el modelo reconoce adecuadamente las características distintivas de cada clase, incluso cuando existen pequeñas variaciones en la posición de la mano o en el fondo de la imagen.  
+
+No obstante, también se identificaron algunos errores de clasificación. En particular, ciertas imágenes correspondientes a la clase paper fueron clasificadas como scissors. Esto ocurre principalmente cuando la mano aparece inclinada o con una perspectiva que modifica la forma característica del gesto, haciendo que algunos dedos sean interpretados como la forma de tijera.
+
+Se pueden considerar ciertas causas las cuales produzcan este pequeño error de clasificación:  
+* Variaciones en el ángulo de la mano.
+* Diferencias de iluminación.
+* Perspectivas que alteran la forma del gesto.
+
+Estos resultados indican que el modelo aprendió correctamente los patrones principales, pero aún puede mejorar su capacidad de generalización frente a situaciones más complejas.
+
+**Conclusión de los resultados**  
+En términos generales, los resultados obtenidos permiten concluir que la combinación de ResNet18, la función de pérdida Crossentropy y el optimizador AdamW fue adecuada para resolver el problema de clasificación de imágenes de piedra, papel y tijera. El modelo logró reconocer correctamente la mayoría de las imágenes del conjunto de prueba y los errores observados corresponden principalmente a casos donde las diferencias visuales entre los gestos son menos evidentes debido a la orientación o posición de la mano.
+
+
+
+
 
 
 
