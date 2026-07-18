@@ -42,7 +42,7 @@ El objetivo es clasificar imágenes correspondientes a los gestos de piedra, pap
 
 Se observa una cantidad importante de imágenes en la carpeta "val" y "test". A pesar de que la cantidad de imágenes en la carpeta "train" es mayor, normalmente debería seguir una distribución de sobre el 70% de las imágenes, cosa que no se cumple en este caso, ello pudiendo generar problemas para el modelo preentrenado para predecir correctamente las formas de las palmas de las manos. Aun así, se ha decidido no cambiar la distribución original prevista por el dataset, pues de esta manera se podrá evaluar de manera íntegra los resultados obtenidos, de forma que se pueda evaluar si llega a existir esta problemática o no con las configuraciones actuales del dataset.
 
-### Cantidad de imágenes por clase gráfica
+### Visualización de cantidad de imágenes por clase
 <img width="593" height="398" alt="Cantidad de papel, piedra y tijeras" src="https://github.com/user-attachments/assets/5b876159-e443-4ab2-95cc-3344c248d615" /> 
 
 Antes del entrenamiento se analizó la cantidad de imágenes por clase. Se observa que existe una distribución ligeramente mayor para las imágenes que contienen "papel" respecto de las otras opciones, que tienen una distribución exactamente igual. Esto, sin embargo, no necesariamente representa una problemática, pues representa un desbalance bajo, por lo que no se aplicarán técnicas de reducción de dicho desbalance. 
@@ -97,6 +97,7 @@ En este proyecto se utilizaron las métricas precision, recall, F1-score y suppo
 Durante los Epoch, se observa que la pérdida de entrenamiento fue constante (pasó de 1.1495 a 0.3455), al igual que la pérdida de validación (1.0645 a 0.6179). Al mismo tiempo el accuracy de entrenamiento aumentó de 0.372 a 0.896, de la misma forma ocurre con el accuracy de validación, que aumentó de 0.430 a 0.749.
 Estos resultados determinan que el modelo "aprendió" patrones que le resultan útiles para la clasificación de las imágenes, y dicho aprendizaje se estaba trasladando al conjunto de validación. No se activó el early stopping en ninguna de las iteraciones, porque el modelo seguía mejorando.
 
+### Visualización de pérdida y accuracy de grupo entrenamiento y validación
 <img width="1289" height="490" alt="cce578f9-5233-4107-9a8e-e9de669c76ad" src="https://github.com/user-attachments/assets/94755c5b-e495-4916-9426-2d1baff43b51" />﻿# Proyecto-2---Introduccion-a-la-IA
 
 Tal como se observó anteriormente, las pérdidas de entrenamiento y validación, así como las mejoras en el accuracy de los mismos tienen cierta consistencia. Dadas las leves mejoras en el crecimiento del accuracy para la validación desde el Epoch 10 en adelante (mayormente observable con los valores obtenidos en el ejercicio anterior) vemos que es posible que el modelo esté experimentando de overfitting. Sin embargo, las iteraciones realizadas aún conservan una diferencia entre entrenamiento y validación (diferencia entre 0.896 y 0.749), por lo que se puede argumentar que es un overfitting leve o controlado. Es menester que en caso de realizar mayor cantidad de iteraciones se observe dicha diferencia, porque es posible que en más de 20 iteraciones si se presente un caso de overfitting mayor al que se muestra actualmente.
