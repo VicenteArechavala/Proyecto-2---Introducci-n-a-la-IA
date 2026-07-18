@@ -50,7 +50,7 @@ Antes del entrenamiento se analizó la cantidad de imágenes por clase. Se obser
 
 Se observan las distintas imágenes que existen para las 3 opciones que tiene el dataset. Como se puede ver en la figura, las imágenes del dataset no cuentan con una estructura específica, es decir, más allá de las 3 opciones permitidas, los diseños mostrados en cámara no siguen un patrón específico de distancia o posición, lo que da mayor diversidad en los patrones que debe determinar el dataset como pertenecientes a cierto tipo de características que deriven en la opción correcta o incorrecta (determinar correctamente si se trata de una piedra, papel, o tijera).
 
-*Modelo*
+## Modelo
 
 **Justificación del criterio de entrenamiento**  
 Cross entropy  
@@ -85,9 +85,9 @@ En este proyecto se utilizaron las métricas precision, recall, F1-score y suppo
 
 * Support: El support representa la cantidad real de imágenes pertenecientes a cada clase dentro del conjunto de evaluación. Esta métrica no mide directamente el rendimiento del modelo, pero permite interpretar correctamente las demás métricas.    
 
-**Resultados**  
+## Resultados  
 
-_Resultados de las iteraciones de EPOCH se encuentran en el código_
+### _Resultados de las iteraciones de EPOCH se encuentran en el código_
 
 Durante los Epoch, se observa que la pérdida de entrenamiento fue constante (pasó de 1.1495 a 0.3455), al igual que la pérdida de validación (1.0645 a 0.6179). Al mismo tiempo el accuracy de entrenamiento aumentó de 0.372 a 0.896, de la misma forma ocurre con el accuracy de validación, que aumentó de 0.430 a 0.749.
 Estos resultados determinan que el modelo "aprendió" patrones que le resultan útiles para la clasificación de las imágenes, y dicho aprendizaje se estaba trasladando al conjunto de validación. No se activó el early stopping en ninguna de las iteraciones, porque el modelo seguía mejorando.
@@ -98,7 +98,7 @@ Tal como se observó anteriormente, las pérdidas de entrenamiento y validación
 
 En vista lo anterior, se considera que el modelo es apto para el siguiente paso de testeo.
 
-_Reporte de clasificación se encuentra en el código_
+### _Reporte de clasificación se encuentra en el código_
 
 Se observa un accuracy del 0.5926 para el test, y si bien podría considerarse un valor relativamente bajo, pues el accuracy obtenido en la validación fue de 0.749, esto puede ocurrir dada la posibilidad de que las imágenes de la carpeta "test" contengan carácterísticas ligeramente distintas de las otras carpetas. A pesar de lo dicho, el valor obtenido en al accuracy del test determina que el modelo aprendió patrones relevantes que le permiten identificar con cierta claridad las opciones posibles.
 
@@ -107,7 +107,7 @@ La clase con mayor presición fue la piedra, pero a costa de un recall de 0.441 
 Los valores obtenidos en papel son bastante malos, pues con una presición de 0.492, recall de 0.540 y f1-score de 0.515, se determina que el modelo tiene complicaciones para distinguir cuando se trata de esta categoría.
 
 
-_Matriz de confusión se encuentra en el código_
+### _Matriz de confusión se encuentra en el código_
 
 La matriz de confusión obtenida muestra lo que se argumentó previamente. 
 
@@ -135,7 +135,7 @@ Se pueden considerar ciertas causas las cuales produzcan este pequeño error de 
 
 Estos resultados indican que el modelo aprendió correctamente los patrones principales, pero aún puede mejorar su capacidad de generalización frente a situaciones más complejas.
 
-**Conclusión de los resultados**  
+## Conclusión de los resultados  
 En este proyecto, se implementó un sistema de clasificación de imágenes para reconocer los gestos de piedra, papel y tijeras mediante transferencia de aprendizaje. Se dió uso a el modelo preentrenado ResNet18, congelando su backbone y reemplazando la capa final por una nueva cabeza de clasificación adaptada a las 3 opciones presentes del dataset.
 
 El entrenamiento mostró una evolución positiva, pues el accuracy de validación fue de 0.749, y si pérdida de validación disminuyó de forma sostenida. Esto indica que el modelo logró aprender características relevantes del dataset sin presentar overfitting considerable, pues se observó una diferencia moderada entre el rendimiento de entrenamiento y validación.
